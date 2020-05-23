@@ -86,8 +86,8 @@ exports.handler = (event) => {
         if (err) console.log(err, err.stack);
         else {
             var date = dateAndTime.split(' ')[0];
-            var lowerLimitTime = new Date(currentTime.getTime() - (60000 * (event.IntervalMinutes + event.BufferMinutes)));
-            var upperLimitTime = new Date(currentTime.getTime() + (60000 * (event.IntervalMinutes + event.BufferMinutes)));
+            var lowerLimitTime = new Date(currentTime.getTime() - (60000 * (event.IntervalMinutes + 1)));
+            var upperLimitTime = new Date(currentTime.getTime() + (60000 * (event.IntervalMinutes + 1)));
             
             data.Reservations.forEach(reservation => {
                 reservation.Instances.forEach(instance => {
