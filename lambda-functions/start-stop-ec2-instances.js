@@ -11,7 +11,7 @@ var getTag = function (tags, key) {
     });
     
     return value;
-}
+};
 
 var startInstances = function(ec2, instance, date, currentTime, upperLimitTime) {
     var startTime = getTag(instance.Tags, 'auto:StartTime');
@@ -37,7 +37,7 @@ var startInstances = function(ec2, instance, date, currentTime, upperLimitTime) 
         }
     }
     else console.log("Instance (ID: " + instance.InstanceId + ") has no 'auto:StartTime' tag setup.");
-}
+};
 
 var stopInstances = function(ec2, instance, date, currentTime, lowerLimitTime) {
     var stopTime = getTag(instance.Tags, 'auto:StopTime');
@@ -64,7 +64,7 @@ var stopInstances = function(ec2, instance, date, currentTime, lowerLimitTime) {
         }
     }
     else console.log("Instance (ID: " + instance.InstanceId + ") has no 'auto:StopTime' tag setup.");
-}
+};
 
 exports.handler = (event) => {
     var currentTime = new Date();
