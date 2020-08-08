@@ -1,3 +1,6 @@
 {
-  "IntervalMinutes": 60
+  "IntervalMinutes": 60,
+  "ForceSchedule": false,
+  "ForceStop": false,
+  "SmartStop": false
 }
