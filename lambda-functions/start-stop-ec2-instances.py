@@ -54,7 +54,7 @@ def try_force_stop(force, region, ec2, instance):
             logger.info('Auto-Scaling Group (' + asg_name + ') current configuration = Minimum Size: ' + str(asg['MinSize']) + ', Desired Capacity: ' + str(asg['DesiredCapacity']) + '.')
             
             if asg['MinSize'] > 0 or asg['DesiredCapacity'] > 0:
-                asg.update_auto_scaling_group(MinSize=0, DesiredCapacity=0)
+                autoscaling.update_auto_scaling_group(AutoScalingGroupName=asg_name, MinSize=0, DesiredCapacity=0)
                 logger.info('Auto-Scaling Group (' + asg_name + ') modified configuration = Minimum Size: 0, Desired Capacity: 0.')
     else:
         stop_instance(ec2, instance)
